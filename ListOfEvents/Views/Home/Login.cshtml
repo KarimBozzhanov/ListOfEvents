@@ -1,0 +1,63 @@
+﻿@model ListOfEvents.ViewModel.LoginModel;
+
+@{
+    ViewData["Title"] = "Вход";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <form asp-action="Login" asp-controller="Home">
+        <div class="main_container">
+            <div class="login_text">
+                <h3>Войти в аккаунт диспетчера</h3>
+            </div>
+
+            <div class="fields_container">
+                <div class="login_admin">
+                    <p>Чтобы получить свой логин и пароль к аккаунту диспетчера <br />обратитесь по номеру: +7 707 233 5599 или электронной <br />почте: karim.bozzhanov@alsi.com</p>
+                </div>
+                <div class="login_fields">
+                    <div class="login_field">
+                        <div>
+                            <p>Логин: </p>
+                        </div>
+                        <div>
+                            <input class="login_input" asp-for="Login" type="text" required  autocomplete="off"/>
+                        </div>
+
+                    </div>
+                    <div class="password_field">
+                        <div>
+                            <p>Пароль: </p>
+                        </div>
+                        <div>
+                            <input class="pass_input" asp-for="Password" type="password" required autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login_btn_block">
+            <button class="login_btn" type="submit">Войти</button>
+        </div>
+    </form>
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
+
