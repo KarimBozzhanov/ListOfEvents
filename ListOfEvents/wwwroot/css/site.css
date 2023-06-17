@@ -1,71 +1,306 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿.login_text {
+    margin-top: 10%;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.main_container {
+    margin-left: 10%;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.fields_container {
+    margin-top: 10%;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.login_admin {
+    float: left;
+    margin-top: 5px;
+    margin-right: 10%;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+.login_fields {
+    display: inline;
 }
-@media (min-width: 768px) {
-  html {
+
+.login_field div {
+    display: inline-block;
+}
+
+.password_field div {
+    display: inline-block;
+}
+
+.login_input {
+    border: none;
+    border-bottom: 1px solid #323232;
+    width: 250px;
+    margin-left: 20px;
+}
+
+.pass_input {
+    border: none;
+    border-bottom: 1px solid #323232;
+    width: 250px;
+    margin-left: 20px;
+}
+
+.pass_input:focus {
+    outline: none;
+}
+
+.img_block {
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25)
+}
+
+
+
+.login_input {
+    outline: none;
+}
+    
+.login_btn {
+    background-color: transparent;
+    padding: 13px 60px;
+    border: 1px solid #323232;
+    margin-top: 20px;
+}
+
+.img_btn {
+    background-color: #B1B1B1;
+    padding: 130px 230px;
+    text-align: center;
+}
+
+.container_inputs {
+    display: flex;
+
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
+    margin: 0px 15%;
+}
+
+.image {
+    flex: 1;
+}
+
+.form {
+    flex: 1;
+    padding: 57px;
+    box-sizing: border-box;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.create_input {
+    border: 1px solid #323223;
+    height: 30px;
+}
+
+.create_input:focus {
+    outline: none;
+}
+
+.create_text {
+    font-style: normal;
+    font-weight: 600;
     font-size: 16px;
-  }
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 8px;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.plus {
+    font-size: 40px;
+    color: #323232;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.eventName {
+    border: 1px solid #000000;
+    height: 35px;
+    width: 300px;
+    margin-top: 10px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.eventName:focus {
+    outline: none;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+.eventName_block {
+    margin-top: 60px
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.image_src {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.eventDescription {
+    border: 1px solid #000000;
+    height: 25px;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.eventDescription:focus { 
+    outline: none;
+}
+
+.eventDescription_text {
+    margin-left: 15%;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+
+.name {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: transparent;
+    margin-left: 10%;
+    width: 400px;
+}
+
+.registration div {
+    display: inline-block;
+}
+
+
+.file_block {
+    background-color: #323232;
+    margin-top: 40px;
+    padding: 20px 15%;
+}
+
+.create_form {
+    height: 100%;
+}
+
+.registration_block {
+    margin-bottom: 20%;
+}
+
+
+.file_text {
+    display: inline-block;
+}
+
+.file_input {
+    float: right;
+}
+
+.submit_btn {
+    padding: 15px 25px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-top: 20px;
+}
+
+.refulations_file div{
+    display: inline-block;
+}
+
+.file_name {
+    position: absolute;
+    bottom: 13px;
+    left: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-decoration-line: underline;
+    width: 100px;
+    margin-bottom: 0px;
+}
+
+.card_image {
+    width: 470px;
+    height: 270px;
+    object-fit: cover;
+}
+
+.event_card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.event_card_block {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.card_footer div {
+    display: inline-block;
+}
+
+.details_btn {
+    float: right;
+}
+
+.card_name p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+.card_name {
+    margin: 10px 20px;
+}
+
+.details_btn a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.details_btn {
+    margin-top: 10px;
+    margin-right: 10px
+}
+
+.event_date {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.image_detail {
+    width: 500px;
+    height: 310px;
+    object-fit: cover;
+}
+
+.event_description {
+    margin: 0px 250px;
+    text-align: start;
+}
+
+.send_btn {
+    float: right;
+}
+
+.registration_inputs {
+    display: inline-block;
 }
