@@ -16,41 +16,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
-<body>
+<body class="create_body">
+
+    <div class="create_header">
+        <div>
+            <div>
+                <a asp-action="Index" asp-controller="Home"><img src="/StaticFiles/left-arrow.png" /></a>
+            </div>
+        </div>
+        <div class="profile">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a><img src="~/StaticFiles/account.png" /></a>
+            }
+            else
+            {
+                <a asp-action="Login" asp-controller="Home"><img src="~/StaticFiles/account.png" /></a>
+            }
+        </div>
+    </div>
 
     <div class="container_inputs">
         <div class="image">
-            <img class="image_detail" src="@Url.Content(Model.ImagePath)">
+            <img class="image_detail" src="@Url.Content(Model.ImagePath)" alt="Изображение" id="imageSrc">
         </div>
-        <div class="form">
+        <div class="form_detail">
             <p class="create_text">Время и дата проведения:</p>
-            <p class="event_date">@Model.EventDate</p>
+            <p>@Model.EventDate</p>
             <p class="create_text" style="margin-top: 30px">Организатор:</p>
             <p>@Model.EventOrganizer</p>
         </div>
     </div>
 
     <div class="eventName_block" align="center">
-        <h2>@Model.EventName</h2>
+        <h3 style="font-weight: 600">@Model.EventName</h3>
     </div>
 
 
     <div class="description_block">
         <h3 class="eventDescription_text">О мероприятии</h3>
         <div align="center">
-            <p class="event_description">@Model.EventDescription</p>
+            <p class="detail_description">@Model.EventDescription</p>
         </div>
     </div>
 
     <div class="registration_block">
         <h3 class="eventDescription_text">Форма участника</h3>
-        <div class="registration_inputs">
+        <div class="register">
             <div class="registration">
                 <div>
                     <p style="font-weight: 600">Имя: </p>
                 </div>
                 <div>
-                    <input class="name" type="text" autocomplete="off" />
+                    <input class="name" disabled />
                 </div>
             </div>
             <div class="registration">
@@ -58,7 +76,7 @@
                     <p style="font-weight: 600">Фамилия: </p>
                 </div>
                 <div>
-                    <input class="name" type="text" autocomplete="off" />
+                    <input class="name" disabled />
                 </div>
             </div>
             <div class="registration">
@@ -66,7 +84,7 @@
                     <p style="font-weight: 600">Номер телефона: </p>
                 </div>
                 <div>
-                    <input class="name" type="tel" autocomplete="off" />
+                    <input class="name" disabled />
                 </div>
             </div>
             <div class="registration">
@@ -74,13 +92,9 @@
                     <p style="font-weight: 600">Колледж: </p>
                 </div>
                 <div>
-                    <input class="name" type="text" autocomplete="off" />
+                    <input class="name" disabled />
                 </div>
             </div>
-        </div>
-        <div class="send_btn">
-            <p>Перед отправлением формы убедительная просьба ознакомится с файлом положения</p>
-            <a>Отправить</a>
         </div>
     </div>
 

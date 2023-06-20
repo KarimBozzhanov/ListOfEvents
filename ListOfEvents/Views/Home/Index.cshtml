@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<ListOfEvents.Models.Event>
 
+@{
+    ViewData["Title"] = "Главная";
+    Layout = null;
+}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,35 +16,51 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="main_body">
 
 
-    <a asp-action="Login" asp-controller="Home">войти</a>
-    @if(User.Identity.IsAuthenticated)
-    {
-        <p>@User.Identity.Name</p>
-        <a asp-action="CreateEvent" asp-controller="Home">Создать</a>
-    }
+    <div class="main_class">
+        <div class="main_header">
+            <div>
+                <div>
+                    <input class="search_input" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="profile">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a><img src="~/StaticFiles/account.png" /></a>
+                }
+                else
+                {
+                    <a asp-action="Login" asp-controller="Home"><img src="~/StaticFiles/account.png" /></a>
+                }
+            </div>
+        </div>
+       
+        @foreach(var item in Model)
+        {
+            <div class="main_card">
+                <div class="card_image">
+                    <img class="item_image" src="@Url.Content(item.ImagePath)" />
+                </div>
+                <div class="card_description">
+                    <p class="event_name">@item.EventName</p>
+                    <p class="event_organizer">@item.EventOrganizer</p>
 
-    <div>
-        <div class="event_card">
-            @foreach (var item in Model)
-            {
-                <div class="event_card_block">
-                    <div class="card_image_block">
-                        <img class="card_image" src="@Url.Content(item.ImagePath)" />
+                    <p class="description_text">Описание мероприятия: </p>
+                    <p class="event_description">@item.EventDescription</p>
+                    <div>
+                        <p></p>
                     </div>
-                    <div class="card_footer">
-                        <div class="card_name">
-                            <p>@item.EventName</p>
-                        </div>
-                        <div class="details_btn">
-                            <a asp-action="EventDetails" asp-controller="Home" asp-route-eventId="@item.Id">Перейти</a>
-                        </div>
+                    <div>
+                        <a class="detail_btn" asp-action="EventDetails" asp-controller="Home" asp-route-eventId="@item.Id">Узнать больше</a>
                     </div>
                 </div>
-            }
-        </div>
+            </div>
+
+            <hr class="line"/>
+        }
     </div>
 
     <script src="~/js/jquery.min.js"></script>
